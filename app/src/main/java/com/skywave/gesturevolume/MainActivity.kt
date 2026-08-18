@@ -84,9 +84,10 @@ class MainActivity : AppCompatActivity() {
         b.txtSensitivityValue.text = sensitivityLabel(s)
 
         b.txtServiceStatus.text = when {
-            Build.VERSION.SDK_INT < Build.VERSION_CODES.UPSIDE_DOWN_CAKE ->
-                getString(R.string.status_unsupported)
-            enabled -> getString(R.string.status_active)
+            Build.VERSION.SDK_INT < 35 -> getString(R.string.status_unsupported)
+            enabled && VolumeGestureService.isObservingTouches ->
+                getString(R.string.status_active)
+            enabled -> getString(R.string.status_enabled_no_observe)
             else -> getString(R.string.status_inactive)
         }
         b.btnEnableService.text =

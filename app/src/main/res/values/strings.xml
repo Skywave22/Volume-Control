@@ -17,7 +17,8 @@
 
     <string name="status_active">Service active</string>
     <string name="status_inactive">Service not enabled</string>
-    <string name="status_unsupported">Requires Android 14 or newer</string>
+    <string name="status_enabled_no_observe">Service on, but touch observation unavailable</string>
+    <string name="status_unsupported">Requires Android 15 or newer</string>
     <string name="enable_service">Enable in Accessibility</string>
     <string name="open_accessibility_settings">Open Accessibility settings</string>
 

@@ -129,7 +129,7 @@ jobs:
             Download `GestureVolume-*-release.apk` below and install it.
             Then open the app → **Enable in Accessibility** → turn on *Gesture Volume*.
 
-            > Requires **Android 14 (API 34)** or newer for the gesture feature.
+            > Requires **Android 15 (API 35)** or newer for the gesture feature.
             > The widget works on Android 7.0+.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

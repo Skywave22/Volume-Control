@@ -24,11 +24,13 @@ Works **system-wide**: in YouTube, Spotify, games, the browser, the home screen 
 
 This is the important part. Android's built-in multi-finger accessibility gestures (`GESTURE_2_FINGER_SWIPE_UP` and friends) only fire when `FLAG_REQUEST_TOUCH_EXPLORATION_MODE` is enabled — which throws the whole device into TalkBack-style *explore-by-touch*, where a single tap no longer taps and you must double-tap everything. That is unusable for a utility app.
 
-Gesture Volume instead uses **`setMotionEventSources()` / `onMotionEvent()`** (Android 14+), which lets the service **observe** raw touch events **without consuming them**, and does its own two-finger swipe recognition. Your normal taps, scrolls, swipes and pinch-to-zoom all behave exactly as before.
+Gesture Volume instead uses **`setObservedMotionEventSources()`** (Android 15 / API 35), which puts the service in *observing* mode: we receive a copy of each touch event **and the event still flows through to the app underneath**. Your normal taps, scrolls, swipes and pinch-to-zoom all behave exactly as before.
+
+> ⚠️ There is a dangerous middle option the app deliberately avoids: calling `setMotionEventSources(SOURCE_TOUCHSCREEN)` **without** the observing flag. The platform docs state those events "are **not** sent to the rest of the system" — an app doing that swallows every touch on the device. `VolumeGestureService` registers **nothing at all** unless the observing API is confirmed present, so it can never leave your phone in that state.
 
 Horizontal drags are explicitly rejected (a vertical:horizontal ratio gate), and gestures with 3+ fingers are ignored, so it never fights with pinch-to-zoom or system navigation.
 
-> ⚠️ **Requires Android 14 (API 34) or newer** for the gesture feature. The widget works on **Android 7.0+**.
+> ⚠️ **Requires Android 15 (API 35) or newer** for the gesture feature. The widget works on **Android 7.0+**.
 
 ---
 
