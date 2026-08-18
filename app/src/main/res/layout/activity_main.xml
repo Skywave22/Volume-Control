@@ -87,6 +87,16 @@
                 android:backgroundTint="@color/brand_blue"
                 android:text="@string/enable_service"
                 android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_restricted_help"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/restricted_help_link"
+                android:textColor="@color/brand_cyan"
+                android:textSize="13sp" />
         </LinearLayout>
 
         <!-- Live volume card -->

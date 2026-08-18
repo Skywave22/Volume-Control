@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
         }
 
+        b.btnRestrictedHelp.setOnClickListener { showRestrictedHelp() }
+
         b.switchGestures.setOnCheckedChangeListener { _, checked ->
             Prefs.setGesturesEnabled(this, checked)
         }
@@ -108,6 +110,29 @@ class MainActivity : AppCompatActivity() {
         val cur = VolumeController.currentVolume(this)
         val muted = VolumeController.isMuted(this) || cur == 0
         b.txtVolumeValue.text = if (muted) getString(R.string.muted) else "${cur * 100 / max}%"
+    }
+
+    /**
+     * Android 13+ blocks sideloaded apps from enabling Accessibility until the user
+     * explicitly picks "Allow restricted settings". Explain it and offer a shortcut
+     * straight to this app's detail page, where that menu item lives.
+     */
+    private fun showRestrictedHelp() {
+        androidx.appcompat.app.AlertDialog.Builder(this)
+            .setTitle(R.string.restricted_help_title)
+            .setMessage(R.string.restricted_help_body)
+            .setPositiveButton(R.string.got_it, null)
+            .setNeutralButton(R.string.open_app_info) { _, _ ->
+                runCatching {
+                    startActivity(
+                        Intent(
+                            Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                            android.net.Uri.fromParts("package", packageName, null)
+                        )
+                    )
+                }
+            }
+            .show()
     }
 
     private fun sensitivityLabel(level: Int): String = when (level) {

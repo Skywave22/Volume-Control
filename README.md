@@ -75,13 +75,27 @@ The app also has a live in-app volume slider and `−` / mute / `+` buttons.
 ## 📲 Install
 
 1. Grab the latest `GestureVolume-*-release.apk` from the [**Releases**](../../releases) page.
-2. Install it (you may need to allow "install from unknown sources").
+2. Install it. Play Protect will warn you — tap **More details ▸ Install anyway** (not "Got it").
 3. Open the app → **Enable in Accessibility** → turn on **Gesture Volume**.
 4. Try a two-finger swipe up. 🎉
+
+> ### ⚠️ Toggle greyed out, or "Restricted setting"?
+> That's expected. **Android 13+ blocks sideloaded apps from enabling Accessibility** until you allow it by hand: trigger the block once, then Settings ▸ Apps ▸ See all apps ▸ Gesture Volume ▸ **⋮ ▸ Allow restricted settings**.
+>
+> 👉 **Full walkthrough, including Android 15 / Samsung / Xiaomi quirks: [INSTALL.md](INSTALL.md)**
 
 ### Privacy
 
 The accessibility service declares `android:canRetrieveWindowContent="false"` — it **cannot read anything on your screen**. It only receives touch coordinates. No internet permission is requested; nothing leaves your device.
+
+The app declares exactly two permissions, both of which it genuinely uses:
+
+| Permission | Why |
+|---|---|
+| `MODIFY_AUDIO_SETTINGS` | Change the volume — the entire point of the app |
+| `VIBRATE` | Optional haptic tick per volume step |
+
+`SYSTEM_ALERT_WINDOW` and `POST_NOTIFICATIONS` were declared in the first build but never used, so they were removed — unused sensitive permissions are exactly what makes Play Protect shout about "accessing sensitive data".
 
 ---
 

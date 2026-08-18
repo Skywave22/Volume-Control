@@ -41,4 +41,10 @@
     <string name="mute">Mute or unmute</string>
 
     <string name="widget_hint">Add the “Volume Control” widget to your home screen for plus, minus, mute and a tap slider.</string>
+
+    <string name="restricted_help_link">Toggle greyed out or “Restricted setting”? Tap here</string>
+    <string name="restricted_help_title">“Restricted setting” — how to fix</string>
+    <string name="restricted_help_body">Android 13, 14 and 15 block sideloaded apps from turning on Accessibility until you allow it manually. This is a normal Android security step, not a problem with the app.\n\nDo this:\n\n1. Go to Settings ▸ Accessibility ▸ Gesture Volume and try to turn it on. You will see the “Restricted setting” message. Dismiss it — this step is required to reveal the option.\n\n2. Go to Settings ▸ Apps ▸ See all apps ▸ Gesture Volume. You must reach it through this full list, not from Recents.\n\n3. Tap the ⋮ menu at the top right and choose “Allow restricted settings”, then confirm with your PIN or fingerprint.\n\n4. Return to Accessibility and turn Gesture Volume on.\n\nIf the ⋮ menu has no such option (common on Android 15, OxygenOS 15 and ColorOS 15), uninstall the app, then reinstall the APK using a session-based installer from the Play Store such as “Split APKs Installer (SAI)”. That registers the install properly and the restriction no longer applies.\n\nOn Samsung: turn off Settings ▸ Security and privacy ▸ Auto Blocker first.</string>
+    <string name="got_it">Got it</string>
+    <string name="open_app_info">Open app info</string>
 </resources>
