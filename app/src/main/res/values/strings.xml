@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gesture Volume</string>
+    <string name="service_label">Gesture Volume</string>
+    <string name="widget_label">Volume Control</string>
+
+    <string name="service_summary">Two-finger swipe up or down to change volume anywhere.</string>
+    <string name="service_description">Gesture Volume watches for a two-finger swipe up or down anywhere on screen and changes your media volume. It only observes touch events — it never blocks your normal taps and swipes, and it never reads screen content.</string>
+
+    <string name="header_title">Gesture Volume</string>
+    <string name="header_subtitle">Two-finger swipe to control volume</string>
+
+    <string name="gesture_card_title">Your gesture</string>
+    <string name="gesture_up">Two-finger swipe UP → volume up</string>
+    <string name="gesture_down">Two-finger swipe DOWN → volume down</string>
+    <string name="gesture_note">Works in any app. Normal taps, scrolling and pinch-to-zoom are untouched.</string>
+
+    <string name="status_active">Service active</string>
+    <string name="status_inactive">Service not enabled</string>
+    <string name="status_unsupported">Requires Android 14 or newer</string>
+    <string name="enable_service">Enable in Accessibility</string>
+    <string name="open_accessibility_settings">Open Accessibility settings</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="enable_gestures">Enable gestures</string>
+    <string name="haptic_feedback">Haptic feedback</string>
+    <string name="show_volume_ui">Show system volume bar</string>
+    <string name="sensitivity">Swipe sensitivity</string>
+
+    <string name="sens_lowest">Lowest</string>
+    <string name="sens_low">Low</string>
+    <string name="sens_medium">Medium</string>
+    <string name="sens_high">High</string>
+    <string name="sens_highest">Highest</string>
+
+    <string name="volume_title">Volume</string>
+    <string name="muted">Muted</string>
+    <string name="minus">Volume down</string>
+    <string name="plus">Volume up</string>
+    <string name="mute">Mute or unmute</string>
+
+    <string name="widget_hint">Add the “Volume Control” widget to your home screen for plus, minus, mute and a tap slider.</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFFFF</color>
+    <color name="brand_blue">#FF2E8BFF</color>
+    <color name="brand_cyan">#FF56C8FF</color>
+    <color name="brand_purple">#FF7A4FE8</color>
+    <color name="bg_dark">#FF0B1020</color>
+    <color name="card_dark">#FF161C33</color>
+    <color name="text_primary">#FFF2F5FF</color>
+    <color name="text_secondary">#FF9AA6C7</color>
+    <color name="seg_off">#33FFFFFF</color>
+    <color name="widget_bg">#E60B1020</color>
+</resources>

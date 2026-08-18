@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <!-- Top row: readout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_percent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="50%"
+            android:textColor="@color/brand_cyan"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7 / 15"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Middle row: minus / mute / plus -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_minus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn"
+            android:contentDescription="@string/minus"
+            android:padding="10dp"
+            android:src="@drawable/ic_minus" />
+
+        <ImageView
+            android:id="@+id/btn_mute"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_accent"
+            android:contentDescription="@string/mute"
+            android:padding="10dp"
+            android:src="@drawable/ic_volume_on" />
+
+        <ImageView
+            android:id="@+id/btn_plus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn"
+            android:contentDescription="@string/plus"
+            android:padding="10dp"
+            android:src="@drawable/ic_plus" />
+    </LinearLayout>
+
+    <!-- Bottom row: tap slider -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <ImageView android:id="@+id/seg_0" style="@style/SliderSeg" />
+        <ImageView android:id="@+id/seg_1" style="@style/SliderSeg" />
+        <ImageView android:id="@+id/seg_2" style="@style/SliderSeg" />
+        <ImageView android:id="@+id/seg_3" style="@style/SliderSeg" />
+        <ImageView android:id="@+id/seg_4" style="@style/SliderSeg" />
+        <ImageView android:id="@+id/seg_5" style="@style/SliderSeg" />
+        <ImageView android:id="@+id/seg_6" style="@style/SliderSeg" />
+        <ImageView android:id="@+id/seg_7" style="@style/SliderSeg" />
+        <ImageView android:id="@+id/seg_8" style="@style/SliderSeg" />
+        <ImageView android:id="@+id/seg_9" style="@style/SliderSeg" />
+    </LinearLayout>
+</LinearLayout>
